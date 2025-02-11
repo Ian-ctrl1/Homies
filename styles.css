@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #ff9966, #ff5e62);
+  background-size: cover;
+  position: relative;
+  color: #fff;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('memory-background.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px);
+  z-index: -1;
+}
+
+.container {
+  text-align: center;
+  background: rgba(62, 59, 80, 0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 800px;
+  padding: 20px;
+  animation: fadeIn 1s ease-in-out;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.photo-frame {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  animation: swing 1s ease-in-out;
+  position: relative;
+}
+
+.portrait {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.portrait:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.quote {
+  grid-column: span 2;
+  font-size: 18px;
+  color: #dad0d0;
+  font-style: italic;
+  padding: 20px;
+  animation: fadeInUp 1s ease-in-out;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+}
+
+.quote p {
+  margin: 0;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes swing {
+  20% {
+      transform: rotate3d(0, 0, 1, 15deg);
+  }
+  40% {
+      transform: rotate3d(0, 0, 1, -10deg);
+  }
+  60% {
+      transform: rotate3d(0, 0, 1, 5deg);
+  }
+  80% {
+      transform: rotate3d(0, 0, 1, -5deg);
+  }
+  to {
+      transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
