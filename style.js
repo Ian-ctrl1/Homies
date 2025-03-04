@@ -4,7 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   portraits.forEach(portrait => {
       portrait.addEventListener('click', () => {
-          alert('If life is a movie, you are the best thing');
+          portrait.style.transform = "scale(1.2)";
+          setTimeout(() => {
+              portrait.style.transform = "scale(1)";
+              alert('🔥 BONI THE GREAT: If life is a movie, you are the best thing! 🔥');
+          }, 300);
       });
   });
 });
